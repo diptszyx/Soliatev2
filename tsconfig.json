@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@metaplex-foundation/*": ["node_modules/@metaplex-foundation/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "node",
+      "@metaplex-foundation/umi",
+      "@metaplex-foundation/digital-asset-standard-api"
+    ],
+    "baseUrl": "."
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/global.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}

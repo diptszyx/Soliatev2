@@ -1,0 +1,407 @@
+{
+  "address": "3LHMsSsDg6C5WmCTLgLefJQzsbre2XkMJJsvpCwdyETf",
+  "metadata": {
+    "name": "soliatev2",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "close_asset_vault",
+      "discriminator": [22, 210, 8, 123, 149, 106, 108, 88],
+      "accounts": [
+        {
+          "name": "asset_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [97, 115, 115, 101, 116, 95, 118, 97, 117, 108, 116]
+              },
+              {
+                "kind": "account",
+                "path": "asset_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "asset_id",
+          "writable": true
+        },
+        {
+          "name": "receiver",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": ["asset_vault"]
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_action_pda",
+      "discriminator": [172, 96, 167, 58, 126, 54, 192, 100],
+      "accounts": [
+        {
+          "name": "action_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [97, 99, 116, 105, 111, 110]
+              },
+              {
+                "kind": "account",
+                "path": "asset_id"
+              },
+              {
+                "kind": "account",
+                "path": "sharer_address"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "asset_id"
+        },
+        {
+          "name": "sharer_address"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "asset_id",
+          "type": "pubkey"
+        },
+        {
+          "name": "sharer_address",
+          "type": "pubkey"
+        },
+        {
+          "name": "amount_for_sharer",
+          "type": "u64"
+        },
+        {
+          "name": "amount_for_interactor",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "create_advertiser_pda",
+      "discriminator": [139, 45, 32, 28, 86, 46, 1, 246],
+      "accounts": [
+        {
+          "name": "advertiser_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [97, 100, 118, 101, 114, 116, 105, 115, 101, 114]
+              },
+              {
+                "kind": "account",
+                "path": "advertiser_address"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "advertiser_address"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_tree_pda",
+      "discriminator": [103, 156, 205, 201, 48, 167, 30, 103],
+      "accounts": [
+        {
+          "name": "tree_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 114, 101, 101]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "tree_address",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "get_vault_info",
+      "discriminator": [38, 82, 205, 68, 179, 76, 219, 19],
+      "accounts": [
+        {
+          "name": "asset_vault",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [97, 115, 115, 101, 116, 95, 118, 97, 117, 108, 116]
+              },
+              {
+                "kind": "account",
+                "path": "asset_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "asset_id"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_asset_vault",
+      "discriminator": [218, 47, 142, 125, 67, 129, 27, 94],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "asset_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [97, 115, 115, 101, 116, 95, 118, 97, 117, 108, 116]
+              },
+              {
+                "kind": "account",
+                "path": "asset_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "asset_id"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "initial_balance",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_from_vault",
+      "discriminator": [180, 34, 37, 46, 156, 0, 211, 238],
+      "accounts": [
+        {
+          "name": "asset_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [97, 115, 115, 101, 116, 95, 118, 97, 117, 108, 116]
+              },
+              {
+                "kind": "account",
+                "path": "asset_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "asset_id"
+        },
+        {
+          "name": "sharer",
+          "writable": true
+        },
+        {
+          "name": "interactor",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount1",
+          "type": "u64"
+        },
+        {
+          "name": "amount2",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ActionData",
+      "discriminator": [9, 110, 3, 203, 173, 248, 187, 184]
+    },
+    {
+      "name": "AdvertiserData",
+      "discriminator": [191, 54, 119, 39, 66, 225, 152, 246]
+    },
+    {
+      "name": "AssetVault",
+      "discriminator": [193, 119, 127, 25, 157, 102, 175, 164]
+    },
+    {
+      "name": "TreeData",
+      "discriminator": [13, 29, 228, 247, 119, 49, 105, 219]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InsufficientFunds",
+      "msg": "Không đủ tiền trong vault"
+    },
+    {
+      "code": 6001,
+      "name": "OverflowError",
+      "msg": "Lỗi tràn số khi cộng số tiền"
+    },
+    {
+      "code": 6002,
+      "name": "NotAuthorized",
+      "msg": "Người dùng không được phép thực hiện hành động này"
+    },
+    {
+      "code": 6003,
+      "name": "AlreadyInteracted",
+      "msg": "Interactor đã nhận tiền từ vault này"
+    }
+  ],
+  "types": [
+    {
+      "name": "ActionData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "asset_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "sharer_address",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount_for_sharer",
+            "type": "u64"
+          },
+          {
+            "name": "amount_for_interactor",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdvertiserData",
+      "type": {
+        "kind": "struct",
+        "fields": []
+      }
+    },
+    {
+      "name": "AssetVault",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "asset_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "balance",
+            "type": "u64"
+          },
+          {
+            "name": "interacted",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "sharers",
+            "type": {
+              "vec": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "TreeData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "tree_address",
+            "type": "pubkey"
+          }
+        ]
+      }
+    }
+  ]
+}
