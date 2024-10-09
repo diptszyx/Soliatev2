@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Soliate - Web3 Marketing Automation Platform
 
-## Getting Started
+Soliate is a Next.js-based web application that automates Web3 marketing campaigns, leveraging the power of blockchain technology to enhance engagement and growth.
 
-First, run the development server:
+## Prerequisites
 
-```bash
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or later)
+- npm (v6 or later)
+- Git
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/soliatev2.git
+   cd soliatev2
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+## Configuration
+
+1. Create a `.env.local` file in the root directory and add the following environment variables:
+   ```
+   PINATA_API_KEY=your_pinata_api_key
+   PINATA_SECRET_API_KEY=your_pinata_secret_api_key
+   HELIUS_API_KEY=your_helius_api_key
+   ```
+
+2. Replace `your_solana_rpc_endpoint` with your actual Solana RPC endpoint.
+
+## Running the Development Server
+
+To start the development server: 
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To create a production build:
+```
+npm run build
+```
 
-## Learn More
+To start the production server:
+```
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/src/app`: Contains the main application pages and API routes
+- `/src/components`: Reusable React components
+- `/src/lib`: Utility functions and configurations
+- `/public`: Static assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Key Features
 
-## Deploy on Vercel
+- Web3 wallet integration
+- Campaign creation and management
+- Automated token distribution
+- Real-time analytics dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for more information.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact our support team at support@soliate.xyz.
