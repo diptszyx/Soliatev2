@@ -5,6 +5,7 @@ Soliate is a Next.js-based web application that automates Web3 marketing campaig
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (v14 or later)
 - npm (v6 or later)
 - Git
@@ -12,6 +13,7 @@ Before you begin, ensure you have the following installed:
 ## Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/your-username/soliatev2.git
    cd soliatev2
@@ -31,11 +33,10 @@ Before you begin, ensure you have the following installed:
    HELIUS_API_KEY=your_helius_api_key
    ```
 
-2. Replace `your_solana_rpc_endpoint` with your actual Solana RPC endpoint.
-
 ## Running the Development Server
 
-To start the development server: 
+To start the development server:
+
 ```
 npm run dev
 ```
@@ -45,11 +46,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## Building for Production
 
 To create a production build:
+
 ```
 npm run build
 ```
 
 To start the production server:
+
 ```
 npm start
 ```
@@ -63,10 +66,10 @@ npm start
 
 ## Key Features
 
-- Web3 wallet integration
-- Campaign creation and management
-- Automated token distribution
-- Real-time analytics dashboard
+- Blink & Actions
+- Toolkit Marketing
+- Customized Campaign
+- Data automation
 
 ## Contributing
 
